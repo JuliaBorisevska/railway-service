@@ -38,7 +38,7 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
         .disable()
         .authorizeRequests()
         .antMatchers("/cashier/**").access("hasRole('ROLE_CASHIER')")
-        .antMatchers("/customer/**").access("hasRole('ROLE_CUSTOMER')")
+        //.antMatchers("/customer/**").access("hasRole('ROLE_CUSTOMER')")
         .and();
     	
     	http.formLogin()

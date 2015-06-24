@@ -5,8 +5,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.itechart.ticketservice.model.Role;
-import com.itechart.ticketservice.model.User;
+import com.itechart.ticketservice.model.postgre.Role;
+import com.itechart.ticketservice.model.postgre.User;
 import com.itechart.ticketservice.repository.UserRepository;
 
 @Service

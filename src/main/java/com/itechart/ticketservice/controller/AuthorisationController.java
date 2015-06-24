@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.itechart.ticketservice.model.ErrorMessage;
-import com.itechart.ticketservice.model.User;
+import com.itechart.ticketservice.model.postgre.User;
 import com.itechart.ticketservice.service.UserService;
 
 
@@ -32,11 +32,10 @@ public class AuthorisationController {
     @ResponseStatus(HttpStatus.OK)
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public User login(Principal principal) {
-		//org.springframework.security.core.userdetails.User user = (org.springframework.security.core.userdetails.User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
     	User user = userService.getUserByLogin(principal.getName());
     	user.setPassword(null);
 		LOGGER.info("Start method login with user parameters: login - {}, firstName - {}, lastName - {}, roleTitle - {}",
-				user.getLogin(), user.getFirstName(), user.getLastName(), user.getRole().getTitle());
+				user.getLogin(), user.getPerson().getFirstName(), user.getPerson().getLastName(), user.getRole().getTitle());
         return user;
     }
  
