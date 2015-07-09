@@ -29,7 +29,7 @@ app
     			userData.isAuthenticated = true;
     			userData.firstName = data.firstName;
     			userData.lastName = data.lastName;
-    			userData.role = data.role.title;
+    			//userData.role = data.role.title;
     			if (typeof successCallback === 'function') {
     				successCallback();
     			}

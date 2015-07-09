@@ -1,9 +1,22 @@
 'use strict';
-app.controller('LoginCtrl', ['$scope', '$state', 'User', function ($scope, $state, User) {
+app.controller('LoginCtrl', ['$scope', '$modal', '$state', 'User', function ($scope, $modal, $state, User) {
     $scope.username = '';
     $scope.password = '';
     $scope.errors = [];
 
+    var modalInstance = $modal.open({
+        templateUrl: 'public/views/dialogs/login.html',
+        controller: 'LoginDialogCtrl'
+    });
+
+    modalInstance.result.then(function (result) {
+        if (result) {
+        	alert("result");
+            //record.name = result.name;
+            //record.description = result.description;
+        }
+    }, function() {});
+ /*   
     function onSuccessfulLogin() {
       $state.go('home');
     }
@@ -17,4 +30,5 @@ app.controller('LoginCtrl', ['$scope', '$state', 'User', function ($scope, $stat
     $scope.login = function() {
       User.authenticate($scope.username, $scope.password, onSuccessfulLogin, onFailedLogin);
     };
+*/
   }]);

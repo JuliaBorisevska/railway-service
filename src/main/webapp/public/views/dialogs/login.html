@@ -1,15 +1,11 @@
-   
-        <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
-            <div class="panel panel-info" >
-                    <div class="panel-heading">
-                        <div class="panel-title">Войти</div>
-                    </div>     
-
-                    <div style="padding-top:30px" class="panel-body" >
-
-                        <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+<div class="modal-header">
+    <button type="button" class="close"  ng-click="close()">&times;</button>
+    <h4 class="modal-title">Вход</h4>
+</div>
+<div class="modal-body">
+	<div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
                             
-                        <form id="loginform" class="form-horizontal" role="form"  ng-submit="login()">
+                        <form id="loginform" class="form-horizontal" role="form" >
                             
                             <div class="input-group">
     							<div class="alert alert-danger" ng-repeat="error in errors">
@@ -36,18 +32,13 @@
                                         </label>
                                       </div>
                             </div>
+  
+                            </form> 
+        
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-success btn-block" ng-click="login()">Войти</button>
+</div>
 
-
-                                <div style="margin-top:10px" class="form-group">
-                                    <!-- Button -->
-                                    <div class="col-sm-12 controls">
-                                      <input type="submit" id="login-form-submit-button" class="btn btn-success btn-block" value="Войти">
-                                    </div>
-                                </div>
-
-                               
-                            </form>     
-                        </div>                     
-                    </div>  
-        </div>
+   
         
