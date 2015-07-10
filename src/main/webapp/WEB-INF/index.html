@@ -12,33 +12,6 @@
 	
 	<div ui-view="viewA"></div>
 	
-	<!-- <div ng-controller="HeaderCtrl">
-		<nav class="navbar navbar-inverse">
-  			<div class="container-fluid">
-    			<div class="navbar-header">
-      				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        				<span class="icon-bar"></span>
-        				<span class="icon-bar"></span>
-        				<span class="icon-bar"></span>                        
-      				</button>
-      				<a class="navbar-brand" ui-sref="home">TRAVEL</a>
-    			</div>
-    			<div class="collapse navbar-collapse" id="myNavbar">
-      				<ul class="nav navbar-nav">
-        				<li ng-repeat="item in leftMenu">
-                    		<a ui-sref="item.go">{{ item.name }}</a>
-                		</li>
-      				</ul>
-      				
-      				<ul class="nav navbar-nav navbar-right">
-        				<li><a href="#"><span class="glyphicon glyphicon-user"></span> Профиль</a></li>
-        				<li><a ui-sref="login"><span class="glyphicon glyphicon-log-in"></span> Войти</a></li>
-      				</ul>
-    			</div>
-  			</div>
-		</nav>
-	</div> -->
-
 	<div class="container-fluid">
   		<div class="row">
   			<div class="col-sm-6 col-md-6 col-lg-4">
@@ -72,6 +45,7 @@
     <script src="public/js/controllers/homeController.js"></script>
     <!-- services -->
     <script src="public/js/services/authService.js"></script>
+    <script src="public/js/services/menuService.js"></script>
     <!-- angular resource, needed for implementing client REST services -->
     <script src="public/vendor/angular-resource.min.js"></script>
     <script src="public/vendor/angular-route.min.js"></script>

@@ -1,13 +1,12 @@
 'use strict';
-app.controller('LoginDialogCtrl', ['$scope', '$modalInstance', '$state', 'User', function ($scope, $modalInstance, $state, User) {
+app.controller('LoginDialogCtrl', ['$scope', '$rootScope', '$modalInstance', '$state', 'User', function ($scope, $rootScope, $modalInstance, $state, User) {
     $scope.username = '';
     $scope.password = '';
     $scope.errors = [];
 
     function onSuccessfulLogin() {
+    	$state.reload($rootScope.previousState);
     	$modalInstance.close();
-        $state.go('home');
-        alert("go home");
     }
 
     function onFailedLogin(error) {
@@ -17,14 +16,11 @@ app.controller('LoginDialogCtrl', ['$scope', '$modalInstance', '$state', 'User',
     }
 
     $scope.login = function() {
-      User.authenticate($scope.username, $scope.password, onSuccessfulLogin, onFailedLogin);
-      alert("auth");
+        User.authenticate($scope.username, $scope.password, onSuccessfulLogin, onFailedLogin);
     };
     
 
     $scope.close = function () {
-    	$state.go('home');
-        alert("go home");
         $modalInstance.close();
     };
     

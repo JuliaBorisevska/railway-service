@@ -6,18 +6,18 @@
         				<span class="icon-bar"></span>
         				<span class="icon-bar"></span>                        
       				</button>
-      				<a class="navbar-brand" ui-sref="home">TRAVEL</a>
+      				<a class="navbar-brand"  data="travel" ng-click="changeClass($event)" ui-sref="home">TRAVEL</a>
     			</div>
     			<div class="collapse navbar-collapse" id="myNavbar">
       				<ul class="nav navbar-nav">
-        				<li ng-repeat="item in leftMenu">
-                    		<a ui-sref={{item.go}}>{{item.name}}</a>
+        				<li class={{item.style}} ng-repeat="item in leftMenu">
+                    		<a data="{{item.name}}" ng-click="changeClass($event)" ui-sref={{item.go}}>{{item.name}}</a>
                 		</li>
       				</ul>
       				
       				<ul class="nav navbar-nav navbar-right">
       					<li ng-repeat="item in rightMenu">
-                    		<a ui-sref={{item.go}}><span class={{item.style}}></span> {{item.name}}</a>
+                    		<a ui-sref={{item.go}}><span  ng-class="item.style"></span> {{item.name}}</a>
                 		</li>
       				</ul>
     			</div>

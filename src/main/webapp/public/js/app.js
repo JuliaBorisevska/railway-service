@@ -83,4 +83,11 @@ var app = angular.module('mainModule', [
                 }
             }
         });
+	})
+	.run(function($rootScope, $state) {
+		$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+			if (fromState.name!='login'){
+				$rootScope.previousState = fromState.name;
+			}
+	      });
 	});

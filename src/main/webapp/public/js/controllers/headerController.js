@@ -1,47 +1,35 @@
 'use strict';
 app
-  .controller('HeaderCtrl', ['$scope', '$state', 'User', function ($scope, $state, User) {
+  .controller('HeaderCtrl', ['$scope', '$state', 'User', 'Menu', function ($scope, $state, User, Menu) {
       var user = User.getUserData();
-      var anonymousLeftMenu = [{
-          	name: 'Билеты',
-          	go: 'ticket'
-      	}, {
-      		name: 'Расписание',
-          	go: 'schedule'
-      	}];
-      var anonymousRightMenu = [{
-      		name: 'Войти',
-          	go: 'login',
-          	style: 'glyphicon glyphicon-log-in'
-      	}];
-      var userLeftMenu = [{
-          	name: 'Билеты',
-          	go: 'ticket'
-      	}, {
-      		name: 'Расписание',
-          	go: 'schedule'
-      	}, {
-      		name: 'Статистика',
-          	go: 'schedule'
-      	}];
-      var userRightMenu = [{
-      		name: 'Профиль',
-          	go: 'login',
-          	style: 'glyphicon glyphicon-user'
-      	}, {
-      		name: 'Выйти',
-          	go: 'home',
-          	style: 'glyphicon glyphicon-log-in'
-      	}];
+      var i, lth;
+  
+      $scope.changeClass = function (e) {
+    	  for(var i = 0, lth = $scope.leftMenu.length; i < lth; i++) {
+    		  $scope.leftMenu[i].style='simple';
+              if ($scope.leftMenu[i].name==e.target.attributes.data.value){
+            	  $scope.leftMenu[i].style='active';
+              }
+          }
+    	  /*if ($scope.brand.name==e.target.attributes.data.value){
+        	  $scope.brand.style='active';
+          }else {
+        	  $scope.brand.style='simple';
+          }*/
+    	  if (user.isAuthenticated){
+    		  Menu.setUserLeftMenu($scope.leftMenu);
+    	  }else{
+    		  Menu.setAnonymousLeftMenu($scope.leftMenu);
+    	  }
+      }
       //alert(JSON.stringify(user));
-      if (user.isAuthenticated){
-    	  $scope.leftMenu = userLeftMenu;
-    	  $scope.rightMenu = userRightMenu;
-    	  //$scope.user = user; 
+      if (user.isAuthenticated){s
+    	  $scope.leftMenu = Menu.getUserLeftMenu();
+    	  $scope.rightMenu = Menu.getUserRightMenu();
     	  
       }else{
-    	 // $state.go('login'); 
-    	  $scope.leftMenu = anonymousLeftMenu;
-    	  $scope.rightMenu = anonymousRightMenu;
+    	  $scope.leftMenu = Menu.getAnonymousLeftMenu();
+    	  $scope.rightMenu = Menu.getAnonymousRightMenu();
       }
+    //$scope.user = user; 
   }]);

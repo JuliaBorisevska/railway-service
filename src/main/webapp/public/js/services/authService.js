@@ -6,8 +6,7 @@ app
       isAuthenticated: false,
       firstName: '',
       lastName: '',
-      role: '',
-      pages: ['home', 'profile']
+      role: ''
     };
 
     this.getUserData = function(){
