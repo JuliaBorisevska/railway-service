@@ -23,7 +23,7 @@ app
     	  }
       }
       //alert(JSON.stringify(user));
-      if (user.isAuthenticated){s
+      if (user.isAuthenticated){
     	  $scope.leftMenu = Menu.getUserLeftMenu();
     	  $scope.rightMenu = Menu.getUserRightMenu();
     	  

@@ -22,8 +22,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableTransactionManagement
 @PropertySource("classpath:db.properties")
-@EnableJpaRepositories("com.itechart.ticketservice.repository")
-public class DevelopmentConfiguration {
+@EnableJpaRepositories("com.itechart.ticketservice.repository.postgre")
+public class PostgreConfiguration {
 	
 	private static final String PROP_DATABASE_DRIVER = "db.driver";
     private static final String PROP_DATABASE_PASSWORD = "db.password";

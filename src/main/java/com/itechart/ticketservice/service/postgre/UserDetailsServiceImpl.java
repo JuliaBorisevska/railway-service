@@ -1,4 +1,4 @@
-package com.itechart.ticketservice.service;
+package com.itechart.ticketservice.service.postgre;
 
 import java.util.HashSet;
 import java.util.Set;

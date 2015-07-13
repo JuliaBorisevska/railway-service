@@ -2,8 +2,6 @@ package com.itechart.ticketservice.controller;
 
 import java.security.Principal;
 
-import org.codehaus.jackson.node.JsonNodeFactory;
-import org.codehaus.jackson.node.ObjectNode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.itechart.ticketservice.model.ErrorMessage;
 import com.itechart.ticketservice.model.postgre.User;
-import com.itechart.ticketservice.service.UserService;
+import com.itechart.ticketservice.service.postgre.UserService;
 
 
 @Controller

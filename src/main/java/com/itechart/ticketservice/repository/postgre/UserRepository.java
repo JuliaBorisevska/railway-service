@@ -1,4 +1,4 @@
-package com.itechart.ticketservice.repository;
+package com.itechart.ticketservice.repository.postgre;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

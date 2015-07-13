@@ -12,7 +12,7 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-import com.itechart.ticketservice.service.UserDetailsServiceImpl;
+import com.itechart.ticketservice.service.postgre.UserDetailsServiceImpl;
 
 
 @Configuration

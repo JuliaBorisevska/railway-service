@@ -1,13 +1,12 @@
-package com.itechart.ticketservice.service;
+package com.itechart.ticketservice.service.postgre;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.itechart.ticketservice.model.postgre.Role;
 import com.itechart.ticketservice.model.postgre.User;
-import com.itechart.ticketservice.repository.UserRepository;
+import com.itechart.ticketservice.repository.postgre.UserRepository;
 
 @Service
 public class UserServiceImpl implements UserService {
