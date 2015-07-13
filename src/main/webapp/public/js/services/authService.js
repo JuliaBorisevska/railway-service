@@ -42,11 +42,31 @@ app
     				}
     			}
     		});
-    	//userData.isAuthenticated = true;
-		//userData.firstName = "Alex";
-		//userData.lastName = "Volkov";
-		//userData.role = "customer";
     	};
+    	
+    	this.logout = function(successCallback, errorCallback) {
+        	var config = {
+        			method: 'GET',
+        			url: '/ticketservice/logout',
+    				data: {},
+    				headers: {
+                        "Content-Type": "application/x-www-form-urlencoded",
+                        "X-Login-Ajax-call": 'true'
+                    }
+        	};
+        	$http(config)
+        		.success(function(data) {
+        			userData.isAuthenticated = false;
+        			userData.firstName = '';
+        			userData.lastName = '';
+        			if (typeof successCallback === 'function') {
+        				successCallback();
+        			}
+        		})
+        		.error(function(data) {
+        								//process!!!!
+        		});
+        	};
 }]);
 
 

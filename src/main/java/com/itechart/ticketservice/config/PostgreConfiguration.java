@@ -5,7 +5,6 @@ import java.util.Properties;
 import javax.annotation.Resource;
 import javax.sql.DataSource;
 
-import org.hibernate.ejb.HibernatePersistence;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;

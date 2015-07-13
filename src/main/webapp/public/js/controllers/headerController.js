@@ -4,6 +4,19 @@ app
       var user = User.getUserData();
       var i, lth;
   
+      function onSuccessfulLogout() {
+      	$state.reload('home');
+      }
+      
+      function onFailedLogout(error) {
+         
+      }
+      
+      $scope.logout = function() {
+          User.logout(onSuccessfulLogout, onFailedLogout);
+      };
+      
+      
       $scope.changeClass = function (e) {
     	  for(var i = 0, lth = $scope.leftMenu.length; i < lth; i++) {
     		  $scope.leftMenu[i].style='simple';
@@ -25,11 +38,11 @@ app
       //alert(JSON.stringify(user));
       if (user.isAuthenticated){
     	  $scope.leftMenu = Menu.getUserLeftMenu();
-    	  $scope.rightMenu = Menu.getUserRightMenu();
+    	  //$scope.rightMenu = Menu.getUserRightMenu();
     	  
       }else{
     	  $scope.leftMenu = Menu.getAnonymousLeftMenu();
-    	  $scope.rightMenu = Menu.getAnonymousRightMenu();
+    	  //$scope.rightMenu = Menu.getAnonymousRightMenu();
       }
-    //$scope.user = user; 
+    $scope.isAuthenticated = user.isAuthenticated; 
   }]);

@@ -39,7 +39,6 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
     	http.formLogin()
         .loginPage("/login")
         .defaultSuccessUrl("/login")
-        //.loginProcessingUrl("/login")
         .failureUrl("/loginfailed")
         .usernameParameter("username")
         .passwordParameter("password")
@@ -48,7 +47,7 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
     	http.logout()
         .permitAll()
         .logoutUrl("/logout")
-        .logoutSuccessUrl("/logout")
+        .logoutSuccessUrl("/successfullogout")
         .invalidateHttpSession(true);
   
 

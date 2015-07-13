@@ -47,8 +47,9 @@ public class AuthorisationController {
         return error;
     }
  
-    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    @RequestMapping(value = "/successfullogout", method = RequestMethod.GET)
     public String logout() {
+    	LOGGER.info("Logout have been finished successfully");
         return "index";
     }
 	

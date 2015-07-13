@@ -16,8 +16,14 @@
       				</ul>
       				
       				<ul class="nav navbar-nav navbar-right">
-      					<li ng-repeat="item in rightMenu">
-                    		<a ui-sref={{item.go}}><span  ng-class="item.style"></span> {{item.name}}</a>
+      					<li ng-if="isAuthenticated">
+                    		<a ui-sref="home"><span  class="glyphicon glyphicon-user"></span> Профиль</a>
+                		</li>
+                		<li ng-if="isAuthenticated">
+                    		<a ng-click="logout()"><span  class="glyphicon glyphicon-log-in"></span> Выйти</a>
+                		</li>
+                		<li ng-if="!isAuthenticated">
+                    		<a ui-sref="login"><span  class="glyphicon glyphicon-log-in"></span> Войти</a>
                 		</li>
       				</ul>
     			</div>
