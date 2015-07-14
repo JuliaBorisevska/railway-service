@@ -1,17 +1,25 @@
 package com.itechart.ticketservice.model.postgre;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 import org.joda.time.LocalTime;
 
+
+@Entity
+@Table(name = "train")
 public class Train extends com.itechart.ticketservice.model.postgre.Entity{
 
 	@Column(name = "first_stop_id", nullable = false, insertable = true, updatable = true)
 	private Long firstStopId;
+	
 	@Column(name = "last_stop_id", nullable = false, insertable = true, updatable = true)
 	private Long lastStopId;
+	
 	@Column(name = "dispatch_time", nullable = false, insertable = true, updatable = true)
 	private LocalTime dispatchTime;
+	
 	@Column(name = "periodicity", nullable = false, insertable = true, updatable = true)
 	private String periodicity;
 	

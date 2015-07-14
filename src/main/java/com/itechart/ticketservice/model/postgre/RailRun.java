@@ -1,11 +1,16 @@
 package com.itechart.ticketservice.model.postgre;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 import org.joda.time.LocalDate;
 
+
+@Entity
+@Table(name = "rail_run")
 public class RailRun extends com.itechart.ticketservice.model.postgre.Entity{
 
 	@Column(name = "dispatch_date", nullable = false, insertable = true, updatable = true)
